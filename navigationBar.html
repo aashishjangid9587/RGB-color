@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>navigation bar</title>
+<style>
+.div2,#div1{
+	font-weight:bold;
+	width:270px;
+	height:250px;
+	border:2pc dashed red;
+	margin:10px;
+	padding-top:1pc;
+	text-align:center;
+	outline:medium outset black;
+}
+[id^="input"],[id="bg_color"]{
+	width:50px;
+}
+.div2{
+	background-image:linear-gradient(to right,lightblue,green,yellow,pink,gray);
+	font-size:37px;
+	text-align:center;
+	width:500px;
+	height:200px;
+}
+.span{
+border:2px solid gray;
+	vertical-align:text-bottom;
+	text-align:center:
+	width:100px;
+	height:100px;
+	font-size:7px;
+}
+</style>
+</head>
+<body>
+<div id="div1">Rgb<input type="number" id="input_r" name="input" /><input type="number" id="input_g" name="input" /><input type="number" id="input_b" name="input" /><button onclick="rgbcolor()">Color</button><br/><br/>
+background-color<input type="text" id="bg_color" name="color" placeholder="Color" /><button onclick="bgcolor()" >Color</button>
+</div>
+
+
+<div class="div2">css property<span class="span">text-align</span></div>
+<script>
+function rgbcolor(){
+let red = document.getElementById("input_r");
+let green = document.getElementById("input_g");
+let blue = document.getElementById("input_b");
+let rgb ="rgb("+red.value+','+green.value+','+blue.value+")";
+console.log(rgb);
+let bgColor=document.getElementById("div1");
+bgColor.style.backgroundColor=rgb;
+red.value='';green.value='';blue.value='';
+//console.log(bgColor.style);
+}
+function bgcolor(){
+	let color=document.getElementById("bg_color");
+		let bgColor=document.getElementById("div1");
+		bgColor.style.backgroundColor=color.value;
+		color.value='';
+}
+</script>
+</body>
+</html>
